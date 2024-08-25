@@ -1,28 +1,10 @@
-<?php 
-include("inc/data.php");
-include("inc/functions.php");
+<?php
 
-$pageTitle = "Personal Media Library";
-$section = null;
+// Comment these lines to hide errors
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-include("inc/header.php"); ?>
-		<div class="section catalog random">
+require 'includes/config.php';
+require 'includes/functions.php';
 
-			<div class="wrapper">
-
-				<h2>May we suggest something?</h2>
-
-        <ul class="items">
-          <?php
-            $random = array_rand($catalog,4);
-            foreach($random as $id) {
-              echo get_item_html($id,$catalog[$id]);
-            }
-          ?>
-				</ul>
-
-			</div>
-
-		</div>
-
-<?php include("inc/footer.php"); ?>
+init();
